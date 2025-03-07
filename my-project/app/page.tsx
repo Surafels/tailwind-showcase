@@ -31,7 +31,7 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-gray-900 ">
       {/* Navbar */}
       <nav className="bg-white dark:bg-gray-800 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className=" bg-gray-100 w-full px-4 fixed top-0 z-50 dark:bg-gray-500">
           <div className="flex justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
@@ -97,26 +97,11 @@ export default function Home() {
         </h1> */}
         {/* Explantion */}
 
-        <section id="explanation" className="mb-12">
+        <section id="explanation" className=" mt-12 mb-12">
           <h1 className="text-4xl font-bold text-center mb-8 font-serif text-gray-900 dark:text-green-900 ">
             Explanation of New Tailwind CSS Features
           </h1>
 
-          {/* Just-In-Time (JIT) Mode */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 font-mono  text-gray-900 dark:text-white">Just-In-Time (JIT) Mode</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-              <li><strong>On-Demand Style Generation:</strong> Generates styles as you write them, reducing the size of your CSS files.</li>
-              <li><strong>Smaller CSS Files:</strong> Only includes the styles you use, resulting in smaller CSS files.</li>
-              <li><strong>Faster Build Times:</strong> Speeds up the build process by generating styles on-demand.</li>
-              <li><strong>Arbitrary Value Support:</strong> Allows you to use arbitrary values directly in your class names.</li>
-              <li><strong>Simplified Prototyping:</strong> Makes it easier to prototype designs quickly.</li>
-              <li><strong>Responsive and Adaptive Design:</strong> Supports responsive and adaptive design out of the box.</li>
-              <li><strong>Improved Developer Experience:</strong> Enhances the developer experience with faster feedback loops.</li>
-              <li><strong>Dynamic Styling:</strong> Enables dynamic styling based on your needs.</li>
-              <li><strong>Customization Flexibility:</strong> Provides flexibility to customize your design system.</li>
-            </ul>
-          </div>
 
           {/* Aspect Ratio Utility */}
           <div className="mb-8">
@@ -431,28 +416,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Enhanced Components */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-            Enhanced Component Plugins
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
-            New component plugins simplify UI development, allowing for quicker prototyping.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <h3 className="font-bold text-gray-900 dark:text-white">Card {item}</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  This is a card example.
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+
         {/* Text Section */}
         <section id="text" className="py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -579,7 +543,7 @@ export default function Home() {
                   </button>
                 </div>
               </div>
-                {/* Card 3 */}
+              {/* Card 3 */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
