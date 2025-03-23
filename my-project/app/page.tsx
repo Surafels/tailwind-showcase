@@ -209,7 +209,9 @@ export default function Home() {
           <div className="flex items-center space-x-4">
             <Image
               className="w-12 h-12 rounded-full"
-              src="https://via.placeholder.com/150"
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              width={48}
+              height={48}
               alt="User Avatar"
             />
             <div>
@@ -279,6 +281,8 @@ export default function Home() {
               <Image
                 src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                 alt="16:9 Image"
+                width={400}
+                height={225}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -570,9 +574,9 @@ export default function Home() {
               {/* Card 1 */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
                 <Image
-                  // src="https://via.placeholder.com/400x200"
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-
+                  width={400}
+                  height={200}
                   alt="Card Image"
                   className="w-full h-48 object-cover"
                 />
@@ -597,6 +601,8 @@ export default function Home() {
                 <Image
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="Card Image"
+                  width={400}
+                  height={200}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
@@ -620,6 +626,8 @@ export default function Home() {
                 <Image
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="Card Image"
+                  width={400}
+                  height={200}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
@@ -642,6 +650,8 @@ export default function Home() {
                 <Image
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="Card Image"
+                  width={400}
+                  height={200}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
@@ -664,6 +674,8 @@ export default function Home() {
                 <Image
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="Card Image"
+                  width={400}
+                  height={200}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
@@ -765,10 +777,15 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-center mb-8">What Our Clients Say</h2>
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <p className="text-gray-700 italic mb-6">
-                  "Tailwind CSS has completely transformed the way we build websites. It`s fast, flexible, and easy to use."
+                  Tailwind CSS has completely transformed the way we build websites. It`s fast, flexible, and easy to use.
                 </p>
                 <div className="flex items-center">
-                  <Image className="w-12 h-12 rounded-full mr-4" src="https://via.placeholder.com/50" alt="Client" />
+                  <Image className="w-12 h-12 rounded-full mr-4"
+                    src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe"
+
+                    width={48}
+                    height={48}
+                  />
                   <div>
                     <p className="font-semibold">John Doe</p>
                     <p className="text-sm text-gray-600">CEO, Example Corp</p>
