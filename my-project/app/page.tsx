@@ -2,8 +2,8 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import { Button, Dialog, DialogTitle, DialogContent, DialogActions, TextField } from "@mui/material";
-
+import { Button, Dialog, DialogTitle, DialogContent, DialogActions, } from "@mui/material";
+import Image from "next/image";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -145,7 +145,7 @@ export default function Home() {
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4 font-mono text-gray-600 dark:text-orange-500">Button Variants</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-              <li><strong>Easily create different button styles using Tailwind's utility classes.</strong></li>
+              <li><strong>Easily create different button styles using Tailwind`s utility classes.</strong></li>
               <li><strong>Supports primary, secondary, and gradient button styles.</strong></li>
             </ul>
           </div>
@@ -207,7 +207,7 @@ export default function Home() {
           </div>
           {/* avatar */}
           <div className="flex items-center space-x-4">
-            <img
+            <Image
               className="w-12 h-12 rounded-full"
               src="https://via.placeholder.com/150"
               alt="User Avatar"
@@ -276,7 +276,7 @@ export default function Home() {
               16:9 Aspect Ratio
             </h3>
             <div className="aspect-w-16 aspect-h-9 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                 alt="16:9 Image"
                 className="w-full h-full object-cover"
@@ -361,7 +361,7 @@ export default function Home() {
           <div className="relative group perspective-1000 transform-style-preserve-3d">
             {/* Image with 3D Transform */}
             <div className="transform transition-transform duration-500 group-hover:rotate-y-45 group-hover:rotate-x-12 group-hover:scale-105 group-hover:translate-z-12">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                 alt="Sarah Dayan"
                 width={400}
@@ -524,7 +524,7 @@ export default function Home() {
             Extended Customization
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mb-4">
-            Tailwind's theme customization allows you to easily extend colors, spacing, and
+            Tailwind`s theme customization allows you to easily extend colors, spacing, and
             typography.
           </p>
           <div className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white p-6 rounded-lg shadow-lg">
@@ -569,7 +569,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Card 1 */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <img
+                <Image
                   // src="https://via.placeholder.com/400x200"
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
 
@@ -594,7 +594,7 @@ export default function Home() {
 
               {/* Card 2 */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="Card Image"
                   className="w-full h-48 object-cover"
@@ -617,7 +617,7 @@ export default function Home() {
 
               {/* Card 3 */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="Card Image"
                   className="w-full h-48 object-cover"
@@ -639,7 +639,7 @@ export default function Home() {
               </div>
               {/* Card 4 */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="Card Image"
                   className="w-full h-48 object-cover"
@@ -661,7 +661,7 @@ export default function Home() {
               </div>
               {/* Card 3 */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="Card Image"
                   className="w-full h-48 object-cover"
@@ -723,7 +723,7 @@ export default function Home() {
             Button Variants
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mb-4">
-            Easily create different button styles using Tailwind's utility classes.
+            Easily create different button styles using Tailwind`s utility classes.
           </p>
           <div className="flex space-x-4">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-all">
@@ -765,10 +765,10 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-center mb-8">What Our Clients Say</h2>
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <p className="text-gray-700 italic mb-6">
-                  "Tailwind CSS has completely transformed the way we build websites. It's fast, flexible, and easy to use."
+                  "Tailwind CSS has completely transformed the way we build websites. It`s fast, flexible, and easy to use."
                 </p>
                 <div className="flex items-center">
-                  <img className="w-12 h-12 rounded-full mr-4" src="https://via.placeholder.com/50" alt="Client" />
+                  <Image className="w-12 h-12 rounded-full mr-4" src="https://via.placeholder.com/50" alt="Client" />
                   <div>
                     <p className="font-semibold">John Doe</p>
                     <p className="text-sm text-gray-600">CEO, Example Corp</p>
@@ -814,7 +814,7 @@ export default function Home() {
             Contact Us
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mb-4">
-            We'd love to hear from you! Fill out the form below to get in touch.
+            We`d love to hear from you! Fill out the form below to get in touch.
           </p>
           <form className="space-y-4">
             <div>
