@@ -1,22 +1,21 @@
-"use client"; // Enable interactivity for client-side features
+"use client";
 
+import React from "react";
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import { Button, Dialog, DialogTitle, DialogContent, DialogActions, TextField } from "@mui/material";
+
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Toggle dark mode
+  const [isOpen, setIsOpen] = useState(false)
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Toggle modal visibility
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-  // Apply dark mode class to the <html> element
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
@@ -26,21 +25,39 @@ export default function Home() {
   }, [isDarkMode]);
 
 
+  const [selectedCountry, setSelectedCountry] = useState("US");
+
+  const countries = [
+    { code: "US", name: "United States", flag: "🇺🇸" },
+    { code: "IN", name: "India", flag: "🇮🇳" },
+    { code: "GB", name: "United Kingdom", flag: "🇬🇧" },
+    { code: "CA", name: "Canada", flag: "🇨🇦" },
+    { code: "AU", name: "Australia", flag: "🇦🇺" },
+    { code: "DE", name: "Germany", flag: "🇩🇪" },
+    { code: "FR", name: "France", flag: "🇫🇷" },
+    { code: "JP", name: "Japan", flag: "🇯🇵" },
+  ];
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    setSelectedCountry(e.target.value);
+  };
+
+  const selectedCountryDetails = countries.find(
+    (country) => country.code === selectedCountry
+  );
+
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 ">
-      {/* Navbar */}
       <nav className="bg-white dark:bg-gray-800 shadow-lg">
         <div className=" bg-gray-100 w-full px-4 fixed top-0 z-50 dark:bg-gray-500">
           <div className="flex justify-between h-16">
-            {/* Logo */}
             <div className="flex items-center">
               <span className="text-xl font-bold text-gray-900 dark:text-white hover:text-green-500 dark:hover:text-blue-400">
                 Tailwind Showcase
               </span>
             </div>
 
-            {/* Nav Links */}
             <div className="hidden md:flex items-center space-x-4">
 
               <a
@@ -76,7 +93,6 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Dark Mode Toggle */}
             <div className="flex items-center">
               <button
                 onClick={toggleDarkMode}
@@ -89,21 +105,11 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Main Content */}
       <div className="p-8 max-w-7xl mx-auto">
-        {/* Header */}
-        {/* <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
-          Tailwind CSS New Features Showcase
-        </h1> */}
-        {/* Explantion */}
-
         <section id="explanation" className=" mt-12 mb-12">
           <h1 className="text-4xl font-bold text-center mb-8 font-serif text-gray-900 dark:text-green-900 ">
             Explanation of New Tailwind CSS Features
           </h1>
-
-
-          {/* Aspect Ratio Utility */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4 font-mono text-gray-900 dark:text-green-800">Aspect Ratio Utility</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
@@ -113,7 +119,6 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Improved Form Styling */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4 font-mono text-gray-900 dark:text-blue-800">Improved Form Styling</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-red-600">
@@ -122,7 +127,6 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Extended Customization */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4 font-mono text-gray-900 dark:text-blue-500">Extended Customization</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-800 dark:text-red-600">
@@ -131,7 +135,6 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Enhanced Component Plugins */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4 font-mono text-gray-600 dark:text-green-500">Enhanced Component Plugins</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
@@ -139,8 +142,6 @@ export default function Home() {
               <li><strong>Allows for quicker prototyping and development.</strong></li>
             </ul>
           </div>
-
-          {/* Button Variants */}
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4 font-mono text-gray-600 dark:text-orange-500">Button Variants</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
@@ -196,8 +197,71 @@ export default function Home() {
           </div>
         </section>
 
+
+        <div>
+
+          <h1>Components</h1>
+          <div className="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4" role="alert">
+            <p className="font-bold">Info Alert</p>
+            <p>This is an informational message.</p>
+          </div>
+          {/* avatar */}
+          <div className="flex items-center space-x-4">
+            <img
+              className="w-12 h-12 rounded-full"
+              src="https://via.placeholder.com/150"
+              alt="User Avatar"
+            />
+            <div>
+              <p className="font-semibold">John Doe</p>
+              <p className="text-gray-500">Software Engineer</p>
+            </div>
+          </div>
+          {/* badge */}
+          <span className="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">
+            New
+          </span>
+
+
+          {/* checkbox */}
+          <label className="flex items-center space-x-2">
+            <input type="checkbox" className="form-checkbox h-5 w-5 text-blue-600" />
+            <span>Check me</span>
+          </label>
+
+
+          {/* description list */}
+
+
+          <dl className="grid grid-cols-2 gap-x-4 gap-y-2">
+            <dt className="font-semibold">Name</dt>
+            <dd>John Doe</dd>
+            <dt className="font-semibold">Email</dt>
+            <dd>john.doe@example.com</dd>
+          </dl>
+          <fieldset className="border p-4 rounded-lg">
+            <legend className="font-semibold">Personal Information</legend>
+            <label className="block">
+              <span className="text-gray-700">Name</span>
+              <input type="text" className="mt-1 block w-full rounded-md border-gray-300" />
+            </label>
+          </fieldset>
+
+
+          {/*  Listbox (Custom Select) */}
+
+          <div className="relative">
+            <select className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>option 3</option>
+
+            </select>
+          </div>
+        </div>
+
         {/* Aspect Ratio Utility */}
-        <section id="aspect-ratio" className="mb-12">
+        <div id="aspect-ratio" className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             Aspect Ratio Utility
           </h2>
@@ -220,49 +284,101 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 4:3 Aspect Ratio */}
-          {/* <div className="mb-8">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-              4:3 Aspect Ratio
-            </h3>
-            <div className="aspect-w-4 aspect-h-3 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1695653422902-1bea566871c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-                alt="4:3 Image"
-                className="w-full h-full object-cover"
-              />
+        </div>
+        <>
+
+          <Dialog open={isOpen} onClose={setIsOpen}>
+            <DialogTitle>Refund payment</DialogTitle>
+            <DialogContent>
+              The refund will be reflected in the customer’s bank account 2 to 3 business days after processing.
+            </DialogContent>
+            <DialogContent>
+              <div>
+                <label htmlFor="amount" className="block text-sm font-medium text-gray-700">
+                  Amount
+                </label>
+                <input
+                  id="amount"
+                  name="amount"
+                  type="text"
+                  placeholder="$0.00"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+              </div>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={() => setIsOpen(false)}>
+                Cancel
+              </Button>
+              <Button onClick={() => setIsOpen(false)}>Refund</Button>
+            </DialogActions>
+          </Dialog>
+        </>
+
+        <div className="bg-gray-100 flex items-center justify-center ">
+          <div className="max-w-xs w-full">
+            {/* Dropdown Label */}
+            <label htmlFor="country" className="block text-sm font-medium text-gray-700">
+              Select Country
+            </label>
+
+            {/* Dropdown Select */}
+            <select
+              id="country"
+              name="country"
+              className="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+              value={selectedCountry}
+              onChange={handleChange}
+            >
+              {countries.map((country) => (
+                <option key={country.code} value={country.code}>
+                  {country.flag} {country.name}
+                </option>
+              ))}
+            </select>
+
+            {/* Selected Country Display */}
+            <div className="mt-4 p-4 bg-gray-50 rounded-md">
+              <p className="text-sm text-gray-700">
+                Selected Country:{" "}
+                <span className="font-semibold">
+                  {selectedCountryDetails ? `${selectedCountryDetails.flag} ${selectedCountryDetails.name}` : "Country not found"}
+                </span>
+              </p>
             </div>
-          </div> */}
+          </div>
+        </div>
 
-          {/* 1:1 Aspect Ratio */}
-          {/* <div className="mb-8">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-              1:1 Aspect Ratio
-            </h3>
-            <div className="aspect-w-1 aspect-h-1 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1695653422902-1bea566871c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+        {/* badge  */}
+        {/* <section className="flex gap-3">
+          <Badge className="lime">documentation</Badge>
+          <Badge color="purple">help wanted</Badge>
+          <Badge color="rose">bug</Badge>
+        </section> */}
 
-                alt="1:1 Image"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div> */}
-
-          {/* Custom 3:2 Aspect Ratio */}
-          {/* <div>
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-              Custom 3:2 Aspect Ratio
-            </h3>
-            <div className="aspect-w-[3] aspect-h-[2] bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
+        <div className="flex flex-col items-center my-8 text-center animate-fade-in">
+          {/* 3D Image Container */}
+          <div className="relative group perspective-1000 transform-style-preserve-3d">
+            {/* Image with 3D Transform */}
+            <div className="transform transition-transform duration-500 group-hover:rotate-y-45 group-hover:rotate-x-12 group-hover:scale-105 group-hover:translate-z-12">
               <img
                 src="https://images.unsplash.com/photo-1682686581551-867e0b208bd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="3:2 Image"
-                className="w-full h-full object-cover"
+                alt="Sarah Dayan"
+                width={400}
+                height={400}
+                className=" border-4 border-gray-300"
               />
             </div>
-          </div> */}
-        </section>
+
+            {/* Shadow */}
+            <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20  transition-opacity duration-300"></div>
+
+            {/* Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 opacity-0 group-hover:opacity-30  transition-opacity duration-300"></div>
+          </div>
+        </div>
+
+
 
         {/* Improved Forms */}
         <section id="colors" className="py-12 bg-white dark:bg-gray-900 transition-colors duration-300">
@@ -641,6 +757,55 @@ export default function Home() {
               Pulse
             </button>
           </div>
+        </section>
+
+        <div>
+          <div className="bg-gray-100 py-12">
+            <div className="max-w-4xl mx-auto px-4">
+              <h2 className="text-3xl font-bold text-center mb-8">What Our Clients Say</h2>
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <p className="text-gray-700 italic mb-6">
+                  "Tailwind CSS has completely transformed the way we build websites. It's fast, flexible, and easy to use."
+                </p>
+                <div className="flex items-center">
+                  <img className="w-12 h-12 rounded-full mr-4" src="https://via.placeholder.com/50" alt="Client" />
+                  <div>
+                    <p className="font-semibold">John Doe</p>
+                    <p className="text-sm text-gray-600">CEO, Example Corp</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 p-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-64 text-center">
+            <h3 className="text-xl font-semibold mb-4">Basic</h3>
+            <p className="text-gray-600 mb-4">Perfect for individuals</p>
+            <p className="text-4xl font-bold mb-4">$10<span className="text-lg text-gray-500">/mo</span></p>
+            <ul className="text-sm text-gray-600 mb-6">
+              <li className="mb-2">1 User</li>
+              <li className="mb-2">5 Projects</li>
+              <li className="mb-2">Basic Support</li>
+            </ul>
+            <button className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">Get Started</button>
+          </div>
+
+          <div className="bg-blue-500 text-white rounded-lg shadow-lg p-6 w-64 text-center transform scale-105">
+            <h3 className="text-xl font-semibold mb-4">Pro</h3>
+            <p className="mb-4">Best for small teams</p>
+            <p className="text-4xl font-bold mb-4">$20<span className="text-lg">/mo</span></p>
+            <ul className="text-sm mb-6">
+              <li className="mb-2">5 Users</li>
+              <li className="mb-2">Unlimited Projects</li>
+              <li className="mb-2">Priority Support</li>
+            </ul>
+            <button className="bg-white text-blue-500 px-6 py-2 rounded-full hover:bg-gray-100 transition duration-300">Get Started</button>
+          </div>
+          <Button type="button" onClick={() => setIsOpen(true)}>
+            Refund payment
+          </Button>
         </section>
 
         {/* Contact Section */}
